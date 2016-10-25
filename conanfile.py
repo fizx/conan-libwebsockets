@@ -41,10 +41,10 @@ class LibwebsocketsConan(ConanFile):
         
     def package(self):
         self.copy("*.h", dst="include", src="libwebsockets/lib")
-        self.copy("*.h", dst="include", src="libwebsockets")
-        self.copy("*.a", dst="lib", src="libwebsockets")
-        self.copy("*.dylib", dst="lib", src="libwebsockets")
-        self.copy("*.so", dst="lib", src="libwebsockets")
+        self.copy("*.h", dst="include", src="libwebsockets/lib")
+        self.copy("*.a", dst="lib", src="libwebsockets/lib")
+        self.copy("*.dylib", dst="lib", src="libwebsockets/lib")
+        self.copy("*.so", dst="lib", src="libwebsockets/lib")
 
     def package_info(self):
         self.cpp_info.libs = ["websockets"]
