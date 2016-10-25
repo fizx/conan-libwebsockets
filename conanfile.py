@@ -11,7 +11,7 @@ class LibwebsocketsConan(ConanFile):
 
     def config(self):
         self.requires.add("OpenSSL/1.0.2h@lasote/stable", private=False)
-        self.requires.add("LibUV")
+        self.requires.add("LibUV/1.x@fizx/testing")
 
     def source(self):
         self.run("git clone https://github.com/warmcat/libwebsockets.git")
