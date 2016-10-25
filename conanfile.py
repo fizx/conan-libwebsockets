@@ -10,7 +10,7 @@ class LibwebsocketsConan(ConanFile):
     generators = "cmake", "txt"
 
     def config(self):
-        self.requires.add("OpenSSL/1.0.2h@lasote/stable", private=False)
+        self.requires.add("OpenSSL/1.0.2i@fizx/testing", private=False)
         self.requires.add("LibUV/1.x@fizx/testing")
 
     def source(self):
@@ -41,6 +41,7 @@ class LibwebsocketsConan(ConanFile):
         
     def package(self):
         self.copy("*.h", dst="include", src="libwebsockets/lib")
+        self.copy("*.h", dst="include", src="libwebsockets")
         self.copy("*.a", dst="lib", src="libwebsockets")
         self.copy("*.dylib", dst="lib", src="libwebsockets")
         self.copy("*.so", dst="lib", src="libwebsockets")
