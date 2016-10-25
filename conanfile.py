@@ -40,10 +40,10 @@ class LibwebsocketsConan(ConanFile):
         # cmake -DLWS_WITH_LIBUV=1 -DLWS_WITH_HTTP2=1 -DLWS_OPENSSL_INCLUDE_DIRS=/usr/local/opt/openssl/include -DLWS_OPENSSL_LIBRARIES="/usr/local/opt/openssl/lib/libssl.a;/usr/local/opt/openssl/lib/libcrypto.a"  ..
         
     def package(self):
-        self.copy("*.h", dst="include", src="libwebsockets/lib/*.h")
-        self.copy("*.a", dst="lib", src="libwebsockets/*.a")
-        self.copy("*.dylib", dst="lib", src="libwebsockets/*.dylib")
-        self.copy("*.so", dst="lib", src="libwebsockets/*.so")
+        self.copy("*.h", dst="include", src="libwebsockets/lib")
+        self.copy("*.a", dst="lib", src="libwebsockets")
+        self.copy("*.dylib", dst="lib", src="libwebsockets")
+        self.copy("*.so", dst="lib", src="libwebsockets")
 
     def package_info(self):
         self.cpp_info.libs = ["websockets"]
